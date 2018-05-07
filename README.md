@@ -1,11 +1,10 @@
 # WrenIDM
 
-OpenIDM enables you to consolidate multiple identity sources for policy and workflow-based management. OpenIDM can 
+WrenIDM enables you to consolidate multiple identity sources for policy and workflow-based management. WrenIDM can 
 consume, transform and feed data to external sources so that you maintain control over the identities of users, 
 devices and other objects.
 
-OpenIDM provides a modern UI experience that allows you to manage your data without writing a single line of code. The 
-standard RESTful interfaces also offer ultimate flexibility so that you can customize and develop the product to fit the
+WrenIDM provides standard RESTful interfaces to offer ultimate flexibility so that you can customize and develop the product to fit the
 requirements of your deployment.
 
 ## Build The Source Code
@@ -13,7 +12,7 @@ requirements of your deployment.
 In order to build the project from the command line follow these steps:
 
 ### Prepare your Environment
-The environment you need to set up is dependent upon the version of OpenIDM that you want to build. To build OpenIDM you
+The environment you need to set up is dependent upon the version of WrenIDM that you want to build. To build WrenIDM you
 will need the following installed on the machine you're going to build on;
 
 Software               | Required Version
@@ -30,7 +29,7 @@ MaxPermSize so set this to '-Xmx1g'.
 
 ### Building the Code
 
-The OpenIDM build process and dependencies are managed by Maven. The first time you build the project, Maven will pull 
+The WrenIDM build process and dependencies are managed by Maven. The first time you build the project, Maven will pull 
 down all the dependencies and Maven plugins required by the build, which can take a significant amount of time. 
 Subsequent builds will be much faster!
 

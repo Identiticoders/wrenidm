@@ -59,5 +59,5 @@ both this file, and should also be included in all files in the project:
 ## Acknowledgments
 
 * Sun Microsystems.
-* The founders of ForgeRock.
-* The good things in life.
+* ForgeRock AS.
+

@@ -58,42 +58,70 @@
                 // default Swagger JSON URL
                 url = "/openidm/?_api";
             }
+            
+            //fetch for credentials first
+            fetch("https://localhost:8443/openidm/info/login", {
+                "credentials":"include",
+                "headers":{"accept":"application/json, text/javascript, */*; q=0.01",
+                           "accept-language":"en-US,en;q=0.9",
+                           "cache-control":"no-cache",
+                           "content-type":"application/json",
+                           "pragma":"no-cache",
+                           "x-openidm-nosession":"false",
+                           "x-openidm-password":"P@ssw0rd",
+                           "x-openidm-username":"wahyu",
+                           "x-requested-with":"XMLHttpRequest"},
+                 "referrer":"https://localhost:8443/",
+                 "referrerPolicy":"no-referrer-when-downgrade",
+                 "body":null,"method":"GET","mode":"cors"})
+            .then (function(response) {
+                hljs.configure({
+                    highlightSizeThreshold: 5000
+                });
 
-            hljs.configure({
-                highlightSizeThreshold: 5000
-            });
-
-            if (window.SwaggerTranslator) {
-                window.SwaggerTranslator.translate();
-            }
-            window.swaggerUi = new SwaggerUi({
-                url: url,
-                validatorUrl: null,
-                dom_id: "swagger-ui-div",
-                defaultModelRendering: 'schema',
-                supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
-                apisSorter: 'alpha',
-                onComplete: function (swaggerApi, swaggerUi) {
-                    // ensure that correct host is set at runtime
-                    window.swaggerUi.api.setHost(location.hostname + ':' + location.port);
-
-                    // NOTE: OpenIDM requires X-Requested-With header
-                    window.swaggerUi.api.clientAuthorizations.add("X-Requested-With",
-                            new SwaggerClient.ApiKeyAuthorization("X-Requested-With", "Swagger-UI", "header"));
-
-                    if (window.SwaggerTranslator) {
-                        window.SwaggerTranslator.translate();
-                    }
-                },
-                onFailure: function (data) {
-                    if (typeof data === 'string' && data.indexOf('401') !== -1) {
-                        // 401: Unauthorized, so redirect to login
-                        window.top.location.replace('/');
-                    }
+                if (window.SwaggerTranslator) {
+                    window.SwaggerTranslator.translate();
                 }
-            });
+                window.swaggerUi = new SwaggerUi({
+                    url: url,
+                    validatorUrl: null,
+                    dom_id: "swagger-ui-div",
+                    defaultModelRendering: 'schema',
+                    supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
+                    apisSorter: 'alpha',
+                    onComplete: function (swaggerApi, swaggerUi) {
+                        // ensure that correct host is set at runtime
+                        window.swaggerUi.api.setHost(location.hostname + ':' + location.port);
 
-            window.swaggerUi.load();
+                        // NOTE: OpenIDM requires X-Requested-With header
+                        window.swaggerUi.api.clientAuthorizations.add("X-Requested-With",
+                                new SwaggerClient.ApiKeyAuthorization("X-Requested-With", "Swagger-UI", "header"));
+
+                        if (window.SwaggerTranslator) {
+                            window.SwaggerTranslator.translate();
+                        }
+                    },
+                    onFailure: function (data) {
+                        if (typeof data === 'string' && data.indexOf('401') !== -1) {
+                            // 401: Unauthorized, so redirect to login
+                            window.top.location.replace('/api/');
+                        }
+                    }
+                });
+
+                window.swaggerUi.load();
+
+                return fetch("https://localhost:8443/openidm/authentication?_action=logout", {
+                "credentials":"include",
+                "headers":{"accept":"application/json, text/javascript, */*; q=0.01",
+                           "accept-language":"en-US,en;q=0.9",
+                           "cache-control":"no-cache",
+                           "content-type":"application/json",
+                           "pragma":"no-cache",
+                           "x-requested-with":"XMLHttpRequest"},
+                 "referrer":"https://localhost:8443/",
+                 "body":null,"method":"POST","mode":"cors"});
+            });
         });
     </script>
 </head>

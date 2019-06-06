@@ -168,22 +168,6 @@
             <version>${project.version}</version>
         </dependency>
 
-        <!--
-        <dependency>
-            <groupId>org.forgerock.openidm</groupId>
-            <artifactId>openidm-ui-enduser</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        -->
-        
-        <!--
-        <dependency>
-            <groupId>org.forgerock.openidm</groupId>
-            <artifactId>openidm-ui-admin</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        -->
-        
         <dependency>
             <groupId>org.forgerock.openidm</groupId>
             <artifactId>openidm-ui-api</artifactId>

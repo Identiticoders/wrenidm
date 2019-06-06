@@ -433,15 +433,15 @@ public class DBHelper {
         populateDefaultUser(defaultTableName, db, anonymousUser, anonymousPwd, anonymousRoles);
         logger.trace("Created default user {} for registration purposes.", anonymousUser);
 
-        //create wahyu user
-        String wahyuUser = "wahyu";
+        //create test user (used for accessing swagger)
+        String testUserName = "testUser";
         // Default password needs to be replaced after installation
-        String wahyuPwd = "P@ssw0rd";
-        JsonValue wahyuRoles = json(array(
+        String testUserPwd = "P@ssw0rd";
+        JsonValue testUserRoles = json(array(
                 object(field(RelationshipUtil.REFERENCE_ID, "repo/internal/role/openidm-authorized"))));
-        populateDefaultUser(defaultTableName, db, wahyuUser, wahyuPwd, wahyuRoles);
+        populateDefaultUser(defaultTableName, db, testUserName, testUserPwd, testUserRoles);
         logger.trace("Created default user {}. Please change the assigned default password.",
-                wahyuUser);
+                testUserName);
     }
 
     private static void populateDefaultUser(String defaultTableName, ODatabaseDocumentTx db,

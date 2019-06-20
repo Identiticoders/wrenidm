@@ -142,6 +142,10 @@ public class BundleHandlerTest {
         }
     }
 
+/* commented due to the install bundle name not unique HelloWorld:1.0.0.SNAPSHOT
+    we could not run automated testing using below function because they need 
+    some testing files that does not exists on git repository
+*/
 //    @Test
 //    public void testStopBundle() throws Exception {
 //        // install the bundle
@@ -160,6 +164,7 @@ public class BundleHandlerTest {
 //        assertThat(bundle.getState()).isEqualTo(Bundle.RESOLVED);
 //    }
 
+//commented due to the install bundle name not unique HelloWorld:1.0.0.SNAPSHOT
 //    @Test
 //    public void testUninstallBundle() throws Exception {
 //
@@ -223,6 +228,7 @@ public class BundleHandlerTest {
 //
 //    }
 
+//commented due to the install bundle name not unique HelloWorld:1.0.0.SNAPSHOT
 //    /**
 //     * This test updates a bundle that has the same version as
 //     * the previous but contains a different class implementation.

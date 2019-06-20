@@ -77,6 +77,7 @@ public class UpdateManagerImplTest {
     private UpdateManagerImpl newUpdateManager() {
         return new UpdateManagerImpl() {
             {
+                // comment out due to unavailability of the method
                 //bindUpdateLogService(mock(UpdateLogService.class));
             }
             File[] getUpdateFiles() {
@@ -341,6 +342,10 @@ public class UpdateManagerImplTest {
     }
 
     //remove one test due to error
+    /*
+        the error comes when this test using test files that does not exist
+        and did not pushed into git repository
+    */
 //    @Test(dataProvider = "actionsTaken")
 //    public void testUpdateStaticFile(final String filePath, final FileState fileState,
 //            final UpdateManagerImpl.UpdateAction actionTaken) throws Exception {

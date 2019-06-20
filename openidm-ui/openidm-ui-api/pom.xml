@@ -29,8 +29,9 @@
     </description>
     <packaging>bundle</packaging>
 
+    <!--    
     <dependencies>
-        <!-- without this dependency, frontend-maven-plugin will not run in correct order -->
+         without this dependency, frontend-maven-plugin will not run in correct order 
         <dependency>
             <groupId>org.forgerock.openidm</groupId>
             <artifactId>openidm-ui-common</artifactId>
@@ -39,6 +40,7 @@
             <classifier>www</classifier>
         </dependency>
     </dependencies>
+    -->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -45,9 +45,6 @@
     <description>Parent POM for all UI components in Wren:IDM.</description>
 
     <modules>
-        <module>openidm-ui-common</module>
-        <module>openidm-ui-admin</module>
-        <module>openidm-ui-enduser</module>
         <module>openidm-ui-api</module>
     </modules>
 

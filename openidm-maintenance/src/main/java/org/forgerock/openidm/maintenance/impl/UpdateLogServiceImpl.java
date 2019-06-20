@@ -138,4 +138,8 @@ public class UpdateLogServiceImpl extends AbstractRequestHandler implements Upda
                 new UpdateContext(ContextUtil.createInternalContext()),
                 Requests.newUpdateRequest(updateStore, entry.getId(), entry.toJson()));
     }
+    
+    protected void bindConnectionFactory(IDMConnectionFactory connectionFactory) {
+        this.connectionFactory = connectionFactory;
+    }
 }

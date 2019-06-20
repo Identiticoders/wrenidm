@@ -192,4 +192,8 @@ public class MaintenanceService extends AbstractRequestHandler {
         disableMaintenanceMode();
         return handleMaintenanceStatus();
     }
+    
+    void bindMaintenanceFilter(MaintenanceFilter maintenanceFilter) {
+        this.maintenanceFilter = maintenanceFilter;
+    }
 }
